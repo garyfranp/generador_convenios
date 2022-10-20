@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> Generador de convenios Mutualcrea (version Octubre 22)</title>
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<h1>Generador de convenios Mutualcrea (version Octubre 22)</h1>
+<h2>Deudor</h2>
+<p>---------- Nombre ---------- </p>
+<p>Paterno:<input type="text" ng-model="deudor.ap"> Materno <input type="text" ng-model="deudor.am"> Nombre(s) <input type="text" ng-model="deudor.noms"></p>
+<p>---------- Domicilio ----------  </p>
+<p> calle <input type="text" ng-model="direccion.calle"> numero <input type="text" ng-model="direccion.num"> cruzamientos <input type="text" ng-model="direccion.cruzamientos"></p>
+<p> Fracc./Col <input type="text" ng-model="direccion.col"> Ciudad <input type="text" ng-model="direccion.ciudad"> Estado <input type="text" ng-model="direccion.estado"></p>
+
+<h2>Datos del convenio</h2>
+<p>Adeudo Total: <input type="text" ng-model="convenio.monto_adeudo_total"></p>
+<p>Número de pagos: <input type="text" ng-model="convenio.numero_de_pagos"></p>
+<p>Monto de pago: <input type="text" ng-model="convenio.monto_de_pago"></p>
+<p>Periodo de pago en días: <input type="text" ng-model="convenio.periodo_de_pago_en_dias"></p>
+<p>Fecha de inicio para pagar (DD-MM-YYYY) <input type="date" ng-model="convenio.fecha_inicio"></p>
+<p>Fecha de generacion y firma (DD-MM-YYYY) <input type="date" ng-model="convenio.fecha_firma"> </p>
+<br><br>
+
+<label> 
+	<h2> Incluir tabla: <input type="checkbox" ng-model="convenio.agregar_tabla">
+	</h2>  
+</label>
+<br/>
+
+<button type="button" ng-click="generar()">generar</button> 
+
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<!-- AngularJS v1.7.8 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js" integrity="sha512-28WMav3WUIziq1D5l+8y2BrzN+CJgEeIyLksiKOSHWofTgaZc3RMPzvleRhXbLwnzf/C7Xnb0W6pE8PlqeRSog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- LOCALES AngularJS v1.7.8 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-i18n/1.7.8/angular-locale_es-mx.min.js"></script>
+<!-- Moment.js/2.29.1 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- LOCALES Moment.js/2.29.1 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es-mx.min.js" integrity="sha512-Qy4cmZ6v7vnVEc0cn/BIj9q15eB98do4hMvu8xtc/H+v+YYpdpDrB35flHS3NPLbZUpe1npSYY/u+Gi3UB61vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- pdfmake/0.1.31 -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.31/pdfmake.min.js"></script>
+<script src="vfs_fonts.js"></script>
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.31/vfs_fonts.js"></script>
+
+-->
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
+
+-->
+
+<!--  <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
+<!-- <script src="node_modules/angular/angular.min.js"></script> -->
+<!-- <script src="node_modules/moment/min/moment-with-locales.min.js"></script> -->
+<!-- <script src="node_modules/angular/angular-locale_es-mx.js"></script> -->
+<!-- <script src="node_modules/pdfmake/build/pdfmake.min.js"></script> -->
+<!-- <script src="node_modules/pdfmake/build/vfs_fonts.js"></script> -->
+
+<script src="controlador.js"></script>
+	
+
+
+</body>
+</html>
